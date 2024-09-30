@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+     
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&_v=20240930171805" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20240930171805">
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20240930171805"
+    />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
+
+    <script src="js/magnific.min.js?_v=20240930171805"></script>
+
+    <title>Карточка товара с галлереей</title>
+</head>
+    <body>
+
+        <!-- Header -->
+        <!-- Header -->
+<section class="popup" data-popup="1" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title">Оставьте заявку</h2>
+        <p class="popup__subtitle">
+            Заполните форму и мы свяжемся с вами в ближайшее время
+        </p>
+        <div class="popup__inputs">
+            <label for="" class="popup__label">Ваше имя</label>
+            <input class="popup__input" type="text" placeholder="Иван Иванов" required>
+            <label for="" class="popup__label">Номер телефона</label>
+            <input class="popup__input" type="tel" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
+            <label for="" class="popup__label">Email (необязательно)</label>
+            <input class="popup__input" type="email" placeholder="pochta@mail.ru">
+            <label for="" class="popup__label">Название вашей организации</label>
+            <input class="popup__input" type="text" placeholder="ООО «Метида-торг»">
+            <label for="" class="popup__label">Ваше сообщение</label>
+            <textarea class="popup__input" rows="3" placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
+            <label class="popup__confirm">
+                <input type="checkbox">
+                Я готов на обработку персональных данных
+            </label>
+        </div>
+        <button type="submit" class="btn-cta popup__btn">Отправить</button>
+    </form>
+</section>
+
+<section class="popup" data-popup="2" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__cover">
+            <img src="img/popup/photo.jpg" alt="">
+        </div>
+        <h2 class="popup__title">Спасибо за обращение!</h2>
+        <p class="popup__subtitle">
+            Наши специалисты свяжутся с вами в ближайшее время
+        </p>
+        <button type="button" class="btn-cta popup__btn" data-popup-close>закрыть</button>
+    </form>
+</section>
+
+<header>
+    <section class="top-menu cont">
+      <a href="index.html">
+        <img src="img/logo.png">
+      </a>
+      <div class="top-menu-contacts">
+        <div>
+          <span class="icon">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.2496 12.5466H7.49976C7.15459 12.5466 6.87478 12.2685 6.87478 11.9254C6.87478 11.5824 7.15459 11.3043 7.49976 11.3043H12.2496C13.6281 11.3043 14.7495 10.1898 14.7495 8.81986V3.7267C14.7495 2.35677 13.6281 1.24223 12.2496 1.24223H3.74988C2.37143 1.24223 1.24996 2.35677 1.24996 3.7267V8.5093C1.24996 8.68055 1.39014 8.81986 1.56245 8.81986H3.43739C3.78257 8.81986 4.06237 9.09793 4.06237 9.44098C4.06237 9.78402 3.78257 10.0621 3.43739 10.0621H1.56245C0.700915 10.0621 0 9.36552 0 8.5093V3.7267C0 1.6718 1.6822 0 3.74988 0H12.2496C14.3173 0 15.9995 1.6718 15.9995 3.7267V8.81986C15.9995 10.8748 14.3173 12.5466 12.2496 12.5466ZM5.62482 11.9248C5.62482 11.5818 5.34502 11.3037 4.99984 11.3037H0.62498C0.279804 11.3037 0 11.5818 0 11.9248C0 12.2678 0.279804 12.5459 0.62498 12.5459H4.99984C5.34502 12.5459 5.62482 12.2678 5.62482 11.9248ZM7.49976 14.3789C7.49976 14.0358 7.21996 13.7577 6.87478 13.7577H0.62498C0.279804 13.7577 0 14.0358 0 14.3789C0 14.7219 0.279804 15 0.62498 15H6.87478C7.21996 15 7.49976 14.7219 7.49976 14.3789ZM10.2883 7.37396L13.3149 5.09098C13.5899 4.88359 13.6436 4.49397 13.4349 4.22074C13.2263 3.94754 12.8342 3.89409 12.5592 4.10152L9.53142 6.38536C8.6392 7.06157 7.3933 7.062 6.50086 6.38651L3.56948 4.13577C3.29633 3.92605 2.90378 3.97608 2.69279 4.24757C2.48177 4.51903 2.53211 4.9091 2.80529 5.11884L5.73816 7.37076L5.74126 7.37309C6.41089 7.8807 7.21337 8.13442 8.01575 8.13442C8.81772 8.13442 9.61957 7.88089 10.2883 7.37396Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="top-menu-contacts-email">metidatorg@gmail.com</span>
+        </div>
+        <div>
+          <span class="icon">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.87478 15.9995H3.1249C1.40183 15.9995 0 14.5977 0 12.8746V3.1249C0 1.40183 1.40183 0 3.1249 0H6.87478C8.59785 0 9.99969 1.40183 9.99969 3.1249V12.8746C9.99969 14.5977 8.59785 15.9995 6.87478 15.9995ZM3.1249 1.24996C2.09106 1.24996 1.24996 2.09106 1.24996 3.1249V12.8746C1.24996 13.9084 2.09106 14.7495 3.1249 14.7495H6.87478C7.90863 14.7495 8.74972 13.9084 8.74972 12.8746V3.1249C8.74972 2.09106 7.90863 1.24996 6.87478 1.24996H3.1249Z" fill="white"/>
+              <path d="M5.62494 13.5H4.37498C4.02981 13.5 3.75 13.2202 3.75 12.875C3.75 12.5298 4.02981 12.25 4.37498 12.25H5.62494C5.97012 12.25 6.24992 12.5298 6.24992 12.875C6.24992 13.2202 5.97012 13.5 5.62494 13.5Z" fill="white"/>
+              <path d="M5.62482 3.74988H4.37486C4.02969 3.74988 3.74988 3.47008 3.74988 3.1249C3.74988 2.77972 4.02969 2.49992 4.37486 2.49992H5.62482C5.97 2.49992 6.2498 2.77972 6.2498 3.1249C6.2498 3.47008 5.97 3.74988 5.62482 3.74988Z" fill="white"/>
+              </svg>
+          </span>
+          <span class="top-menu-contacts-phone">+375 (17) 502 - 34 - 47</span>
+        </div>
+      </div>
+      <button class="btn-cta btn-cta-with-glow" data-open-popup="1" type="button">Оставить заявку</button>
+      <button class="burger" type="button"></button>
+    </section>
+    <nav>
+      <a href="about.html">О нас</a>
+      <a href="catalog.html">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="burger-menu">
+    <div class="btn-close-cont">
+      <button class="btn-close" type="button"></button>
+    </div>
+    <div class="nav-cont">
+      <a href="about.html">О нас</a>
+      <a href="catalog.html">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </div>
+    <hr>
+    <div class="burger-contacts-cont">
+      <button class="btn-cta btn-cta-with-glow" data-open-popup="1" type="button">Оставить заявку</button>
+      <div class="burger-top-menu-contacts top-menu-contacts">
+        <div class="burger-top-menu-contacts-1">
+          <span class="icon">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.2496 12.5466H7.49976C7.15459 12.5466 6.87478 12.2685 6.87478 11.9254C6.87478 11.5824 7.15459 11.3043 7.49976 11.3043H12.2496C13.6281 11.3043 14.7495 10.1898 14.7495 8.81986V3.7267C14.7495 2.35677 13.6281 1.24223 12.2496 1.24223H3.74988C2.37143 1.24223 1.24996 2.35677 1.24996 3.7267V8.5093C1.24996 8.68055 1.39014 8.81986 1.56245 8.81986H3.43739C3.78257 8.81986 4.06237 9.09793 4.06237 9.44098C4.06237 9.78402 3.78257 10.0621 3.43739 10.0621H1.56245C0.700915 10.0621 0 9.36552 0 8.5093V3.7267C0 1.6718 1.6822 0 3.74988 0H12.2496C14.3173 0 15.9995 1.6718 15.9995 3.7267V8.81986C15.9995 10.8748 14.3173 12.5466 12.2496 12.5466ZM5.62482 11.9248C5.62482 11.5818 5.34502 11.3037 4.99984 11.3037H0.62498C0.279804 11.3037 0 11.5818 0 11.9248C0 12.2678 0.279804 12.5459 0.62498 12.5459H4.99984C5.34502 12.5459 5.62482 12.2678 5.62482 11.9248ZM7.49976 14.3789C7.49976 14.0358 7.21996 13.7577 6.87478 13.7577H0.62498C0.279804 13.7577 0 14.0358 0 14.3789C0 14.7219 0.279804 15 0.62498 15H6.87478C7.21996 15 7.49976 14.7219 7.49976 14.3789ZM10.2883 7.37396L13.3149 5.09098C13.5899 4.88359 13.6436 4.49397 13.4349 4.22074C13.2263 3.94754 12.8342 3.89409 12.5592 4.10152L9.53142 6.38536C8.6392 7.06157 7.3933 7.062 6.50086 6.38651L3.56948 4.13577C3.29633 3.92605 2.90378 3.97608 2.69279 4.24757C2.48177 4.51903 2.53211 4.9091 2.80529 5.11884L5.73816 7.37076L5.74126 7.37309C6.41089 7.8807 7.21337 8.13442 8.01575 8.13442C8.81772 8.13442 9.61957 7.88089 10.2883 7.37396Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="top-menu-contacts-email">metidatorg@gmail.com</span>
+        </div>
+        <div>
+          <span class="icon">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.87478 15.9995H3.1249C1.40183 15.9995 0 14.5977 0 12.8746V3.1249C0 1.40183 1.40183 0 3.1249 0H6.87478C8.59785 0 9.99969 1.40183 9.99969 3.1249V12.8746C9.99969 14.5977 8.59785 15.9995 6.87478 15.9995ZM3.1249 1.24996C2.09106 1.24996 1.24996 2.09106 1.24996 3.1249V12.8746C1.24996 13.9084 2.09106 14.7495 3.1249 14.7495H6.87478C7.90863 14.7495 8.74972 13.9084 8.74972 12.8746V3.1249C8.74972 2.09106 7.90863 1.24996 6.87478 1.24996H3.1249Z" fill="white"/>
+              <path d="M5.62494 13.5H4.37498C4.02981 13.5 3.75 13.2202 3.75 12.875C3.75 12.5298 4.02981 12.25 4.37498 12.25H5.62494C5.97012 12.25 6.24992 12.5298 6.24992 12.875C6.24992 13.2202 5.97012 13.5 5.62494 13.5Z" fill="white"/>
+              <path d="M5.62482 3.74988H4.37486C4.02969 3.74988 3.74988 3.47008 3.74988 3.1249C3.74988 2.77972 4.02969 2.49992 4.37486 2.49992H5.62482C5.97 2.49992 6.2498 2.77972 6.2498 3.1249C6.2498 3.47008 5.97 3.74988 5.62482 3.74988Z" fill="white"/>
+              </svg>
+          </span>
+          <span class="top-menu-contacts-phone">+375 (17) 502 - 34 - 47</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+        <main>      
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs-wrapper container">
+
+    <section class="breadcrumbs">
+        
+        <a href="index.html" class="breadcrumbs__item">Главная</a>
+        <div class="breadcrumbs__arrow">
+            <img src="img/breadcrumbs/breadcrumbs-arrow.svg" alt="">
+        </div>
+        <a href="catalog.html" class="breadcrumbs__item">Каталог</a>
+        <div class="breadcrumbs__arrow">
+            <img src="img/breadcrumbs/breadcrumbs-arrow.svg" alt="">
+        </div>
+        <a href="#" class="breadcrumbs__item">СЗР</a>
+        <div class="breadcrumbs__arrow">
+            <img src="img/breadcrumbs/breadcrumbs-arrow.svg" alt="">
+        </div>
+        <a href="#" class="breadcrumbs__item">Гербициды</a>
+        <div class="breadcrumbs__arrow">
+            <img src="img/breadcrumbs/breadcrumbs-arrow.svg" alt="">
+        </div>
+        <a href="#" class="breadcrumbs__item">Супра, СЭ</a>
+
+    </section>
+
+    <div class="search-input">
+        <input type="search" name="" id="" placeholder="Поиск">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.6714 18.0942L15.8949 14.3287C17.1134 12.7764 17.7745 10.8595 17.7721 8.88603C17.7721 7.12854 17.2509 5.41052 16.2745 3.94922C15.2981 2.48792 13.9103 1.34897 12.2866 0.676412C10.6629 0.00385016 8.87617 -0.172123 7.15245 0.170746C5.42873 0.513616 3.84539 1.35993 2.60266 2.60266C1.35993 3.84539 0.513616 5.42873 0.170746 7.15245C-0.172123 8.87617 0.00385016 10.6629 0.676412 12.2866C1.34897 13.9103 2.48792 15.2981 3.94922 16.2745C5.41052 17.2509 7.12854 17.7721 8.88603 17.7721C10.8595 17.7745 12.7764 17.1134 14.3287 15.8949L18.0942 19.6714C18.1974 19.7755 18.3203 19.8582 18.4556 19.9146C18.591 19.971 18.7362 20 18.8828 20C19.0294 20 19.1746 19.971 19.31 19.9146C19.4453 19.8582 19.5682 19.7755 19.6714 19.6714C19.7755 19.5682 19.8582 19.4453 19.9146 19.31C19.971 19.1746 20 19.0294 20 18.8828C20 18.7362 19.971 18.591 19.9146 18.4556C19.8582 18.3203 19.7755 18.1974 19.6714 18.0942ZM2.22151 8.88603C2.22151 7.56791 2.61238 6.2794 3.34468 5.18342C4.07699 4.08745 5.11785 3.23324 6.33563 2.72882C7.55341 2.22439 8.89342 2.09242 10.1862 2.34957C11.479 2.60672 12.6665 3.24145 13.5986 4.1735C14.5306 5.10555 15.1653 6.29306 15.4225 7.58585C15.6796 8.87864 15.5477 10.2186 15.0432 11.4364C14.5388 12.6542 13.6846 13.6951 12.5886 14.4274C11.4927 15.1597 10.2041 15.5505 8.88603 15.5505C7.11849 15.5505 5.42334 14.8484 4.1735 13.5986C2.92366 12.3487 2.22151 10.6536 2.22151 8.88603Z" fill="#D9D9D9"/>
+        </svg>            
+    </div>
+</div>
+
+            <!-- Card -->
+            <section class="container section">
+    <div class="product">
+        <div class="product__gallery">
+            
+            <div class="product__image">
+                <img src="img/product/product-2.png" alt="">
+            </div>
+
+            <div class="product__gallery-slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="product__gallery-slider-img">
+                            <img src="img/product/product-2-2.png" data-src="" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product__gallery-slider-img">
+                            <img src="img/product/product-2.png" data-src="" alt="">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="product__gallery-slider-img">
+                            <img src="img/product/product-2-3.png" data-src="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product__gallery-nav">
+                <div class="product__gallery-prev product__gallery-nav-btn">
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9.85588 0.911562C10.1605 0.606953 10.6544 0.606953 10.959 0.911562C11.2636 1.21617 11.2636 1.71004 10.959 2.01465L2.13428 10.8393C1.82967 11.1439 1.3358 11.1439 1.03119 10.8393C0.726582 10.5347 0.726582 10.0409 1.03119 9.73625L9.85588 0.911562Z" fill="#80C34E"/>
+                        <path d="M10.9588 18.561C11.2635 18.8656 11.2635 19.3595 10.9588 19.6641C10.6542 19.9687 10.1604 19.9687 9.85576 19.6641L1.03119 10.8393C0.726582 10.5347 0.726582 10.0409 1.03119 9.73625C1.3358 9.43164 1.82955 9.43168 2.13416 9.73629L10.9588 18.561Z" fill="#80C34E"/>
+                    </svg>                        
+                </div>
+                <div class="product__gallery-next product__gallery-nav-btn">
+                    <svg width="12" height="20" viewBox="0 0 12 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.14404 19.0884C1.83943 19.393 1.34557 19.393 1.04096 19.0884C0.736348 18.7838 0.736348 18.2899 1.04096 17.9853L9.86565 9.1606C10.1703 8.85599 10.6641 8.85599 10.9687 9.1606C11.2733 9.46521 11.2733 9.95908 10.9687 10.2637L2.14404 19.0884Z" fill="#80C34E"/>
+                        <path d="M1.04108 1.43897C0.736468 1.13436 0.736468 0.640488 1.04108 0.335879C1.34569 0.0312695 1.83956 0.0312697 2.14416 0.335879L10.9687 9.1606C11.2733 9.46521 11.2733 9.95908 10.9687 10.2637C10.6641 10.5683 10.1704 10.5683 9.86577 10.2637L1.04108 1.43897Z" fill="#80C34E"/>
+                    </svg>                        
+                </div>
+            </div>
+        </div>
+        <div class="product__content">
+            <h1 class="product__title">
+                СУПРА, СЭ
+            </h1>
+            <div class="product__subtitle">Гербицид для защиты посевов</div>
+            <div class="product__desc">
+                <h3>НАЗНАЧЕНИЕ</h3>
+                <p>Послевсходовый гербицид системного действия для защиты посевов пшеницы яровой и озимой, тритикале яровой и озимой, ячменя ярового, овса, кукурузы от однолетних двудольных сорняков.</p>
+            </div>
+            <table class="product__chars">
+                <tr>
+                    <td>ДЕЙСТВУЮЩЕЕ ВЕЩЕСТВО</td>
+                    <td>Глифосата кислоты, 550 г/л.</td>
+                </tr>
+                <tr>
+                    <td>УПАКОВКА</td>
+                    <td>20 л</td>
+                </tr>
+            </table>
+            <div class="product__btns">
+                <a href="javascript:void(0)" class="btn-green">Cпецифиация</a>
+                <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="product-tabs">
+        <div class="product-tabs__header">
+            <div class="product-tabs__tab product-tabs__tab_active">
+                Применение
+            </div>
+            <div class="product-tabs__tab">
+                Описание
+            </div>
+            <div class="product-tabs__tab">
+                Десикант
+            </div>
+        </div>
+        <div class="product-tabs__body">
+            <div class="product-tabs__content">
+                <div class="product-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Культура</th>
+                                <th>Сорная и нежелательная растительность</th>
+                                <th>Норма расхода препарата, л/га</th>
+                                <th>Способ, время обработки, ограничения</th>
+                                <th>Срок последней обработки (в днях до сбора урожая)</th>
+                                <th>Кратность обработок</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Пшеница и тритикале озимые</td>
+                                <td>Однолетние двудольные</td>
+                                <td>0,4–0,6</td>
+                                <td>Опрыскивание посевов весной в фазу кущения культуры</td>
+                                <td>104</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td rowspan="2">Земли несельскохозяйственного пользования (полосы отчуждения линий электропередач, трассы газо — и нефтепроводов, насыпи железных и шоссейных дорог, аэродромы и др. промышленные территории)</td>
+                                <td>Однолетние двудольные</td>
+                                <td>0,4–0,6</td>
+                                <td>Опрыскивание посевов весной в фазу кущения культуры</td>
+                                <td>104</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Однолетние двудольные</td>
+                                <td>0,4–0,6</td>
+                                <td>Опрыскивание посевов весной в фазу кущения культуры</td>
+                                <td>104</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="product-tabs__content" style="display: none;">
+                <div class="product-description">
+                    <div class="product-description__item">
+                        <h3>МЕХАНИЗМ ДЕЙСТВИЯ</h3>
+                        <p>
+                            Гербицид всасывается через зеленые части вегетирующих растений и, передвигаясь по корневой системе сорняков, вызывает гибель корневищ на расстоянии до 2 м от обработанного места. Уничтожение сорняков происходит вследствие того, что действующее вещество препятствует биосинтезу ароматических аминокислот в растениях и синтезу хлорофилла. Под действием гербицида растения приобретают светло-жёлтую окраску, желтеют и в течение 14–20 дней полностью погибают.
+                        </p>
+                    </div>
+                    <div class="product-description__item">
+                        <h3>СКОРОСТЬ ВОЗДЕЙСТВИЯ</h3>
+                        <p>
+                            Видимый эффект обычно отмечается на однолетних видах через 2–4 дня и многолетних видах — через 7–10 дней. Полная гибель через 20 дней и более. Древесным видам необходимо две недели, а при проведении обработки в конце осеннего периода результаты могут проявляться весной. Холодная и облачная погода может вызвать задержку проявления видимых признаков действия. Осадки, выпавшие после обработки, могут значительно уменьшить эффективность.
+                        </p>
+                    </div>
+                    <div class="product-description__item">
+                        <h3>ПЕРИОД ЗАЩИТНОГО ДЕЙСТВИЯ</h3>
+                        <p>
+                            Для многолетних сорных растений в течение вегетационного периода и до повторного отрастания из семян, для однолетних растений до повторного отрастания из семян.
+                        </p>
+                    </div>
+                    <div class="product-description__item">
+                        <h3>СОВМЕСТИМОСТЬ С ДРУГИМИ ПРЕПАРАТАМИ</h3>
+                        <p>
+                            Гербицид может применяться в баковых смесях с предвсходовыми гербицидами и азотными удобрениями. Чтобы избежать снижения эффективности, необходимо провести предварительное тестирование.
+                        </p>
+                    </div>
+                    <div class="product-description__item">
+                        <h3>ФИТОТОКСИЧНОСТЬ</h3>
+                        <p>
+                            Гербицид проявляет фитотоксичность ко всем растениям при непосредственном контакте.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-tabs__content" style="display: none;">
+                <div class="product-table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Культура, обрабатываемые объекты</th>
+                                <th>Норма расхода препарата, л/га</th>
+                                <th>Способ, время обработки, ограничения</th>
+                                <th>Срок последней обработки (в днях до сбора урожая)</th>
+                                <th>Кратность обработок</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Ячмень яровой</td>
+                                <td>1,7-1,9</td>
+                                <td>Опрыскивание посевов за две недели до уборки (при влажности зерна не более 30 %) для подсушивания зерна и частичного подавления сорняков</td>
+                                <td>-</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Кукуруза (кроме семенных посевов)</td>
+                                <td>1,9</td>
+                                <td>Опрыскивание посевов кукурузы при влажности зерна 35-40 %</td>
+                                <td>10</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Подсолнечник</td>
+                                <td>2</td>
+                                <td>Авиационное опрыскивание посевов в начале естественного побурения корзинок методом УМО. Расход рабочей жидкости 5 л/га</td>
+                                <td>8</td>
+                                <td>1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+    $(".product-table-wrapper").each(function(_, table) {
+        let prev = "colored",
+            index = 0,
+            rows = $(table).find("tbody tr")
+
+        while (index < rows.length) {
+            let el = rows[index]
+            
+            if ($(el).find("td[rowspan]").length) {
+                
+                let rowsCount = Number($(el).find("td[rowspan]").attr("rowspan"))
+                
+                if (prev == "uncolored") {
+                    $(el).addClass("colored")
+                    for (let i = 1; i < rowsCount; i++) {
+                        $(rows[index + 1]).addClass("colored")
+                        index++
+                    }
+                    prev = "colored"
+                } else {
+                    prev = "uncolored"
+                    index += rowsCount - 1
+                }
+            } else {
+                if (prev == "uncolored") {
+                    $(el).addClass("colored")
+                    prev = "colored"
+                } else {
+                    prev = "uncolored"
+                }
+            }
+            
+            index++
+        }
+    })
+
+</script>
+
+
+            <!-- Popular -->
+            <section class="popular cont section">
+    <h2 class="section__title">Сейчас покупают</h2>
+    <div class="popular-cont">
+      <a href="javascript:void(0)" class="popular-item products-intro-item">
+        <img src="img/pop-kuk.png">
+        <div class="products-intro-item-text">
+          <p>Кукуруза Айспекс</p>
+          <p class="popular-item-details">ФАО: 180  РИС: 1.6</p>
+          <button class="btn-cta" type="button">Заказать</button>
+        </div>
+      </a>
+      <a href="javascript:void(0)" class="popular-item products-intro-item">
+        <img src="img/pop-kuk.png">
+        <div class="products-intro-item-text">
+          <p>Кукуруза Айспекс</p>
+          <p class="popular-item-details">ФАО: 180  РИС: 1.6</p>
+          <button class="btn-cta" type="button">Заказать</button>
+        </div>
+      </a>
+      <a href="javascript:void(0)" class="popular-item products-intro-item">
+        <img src="img/pop-kuk.png">
+        <div class="products-intro-item-text">
+          <p>Кукуруза Айспекс</p>
+          <p class="popular-item-details">ФАО: 180  РИС: 1.6</p>
+          <button class="btn-cta" type="button">Заказать</button>
+        </div>
+      </a>
+      <a href="javascript:void(0)" class="popular-item products-intro-item">
+        <img src="img/pop-kuk.png">
+        <div class="products-intro-item-text">
+          <p>Кукуруза Айспекс</p>
+          <p class="popular-item-details">ФАО: 180  РИС: 1.6</p>
+          <button class="btn-cta" type="button">Заказать</button>
+        </div>
+      </a>
+    </div>
+</section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="cont">
+    <div class="col-1">
+      <img src="img/logo.png">
+      <!-- TODO: php date here -->
+      <p>© Все права защищены. 2024</p>
+      <p><a href="javascript:void(0)">Политика конфиденциальности</a></p>
+    </div>
+    <div class="col-2 shifted-col">
+      <a href="javascript:void(0)">О нас</a>
+      <a href="javascript:void(0)">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="javascript:void(0)">Новости</a>
+      <a href="javascript:void(0)">Контакты</a>
+    </div>
+    <div class="col-3 shifted-col">
+      <span>+375 (17) 502—34—47</span>
+      <span>metidatorg@gmail.com</span>
+    </div>
+</footer>
+
+        <script src="js/app.min.js?_v=20240930171805"></script>
+    </body>
+</html>

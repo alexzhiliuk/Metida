@@ -1,0 +1,143 @@
+<section class="container section">
+    <h1 class="section__title">Каталог</h1>
+
+    <div class="catalog">
+        <aside class="catalog__sidebar catalog-sidebar">
+            <a href="#" class="catalog-sidebar__item catalog-sidebar__item_active">Кукуруза</a>
+            <a href="#" class="catalog-sidebar__item">Озимый рапс</a>
+            <a href="#" class="catalog-sidebar__item">Озимая пшеница</a>
+            <a href="#" class="catalog-sidebar__item">Озимая рожь</a>
+            <a href="#" class="catalog-sidebar__item">Озимый ячмень</a>
+            <a href="#" class="catalog-sidebar__item">Горох</a>
+            <a href="#" class="catalog-sidebar__item">Соя</a>
+            <a href="#" class="catalog-sidebar__item">Ячмень</a>
+            <a href="#" class="catalog-sidebar__item">Овёс</a>
+            <a href="#" class="catalog-sidebar__item">Кубики для рассады</a>
+        </aside>
+        <div class="catalog__body">
+            <div class="catalog__cats">
+                <a href="#" class="catalog__cat catalog__cat_active">Семена</a>
+                <a href="#" class="catalog__cat">Овощи</a>
+                <a href="#" class="catalog__cat">Удобрения</a>
+                <a href="#" class="catalog__cat">Средства защиты растений</a>
+            </div>
+            <div class="catalog__products">
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="product-with-gallery.html" class="btn-cta">Заказать</a>
+                            <a href="product-with-gallery.html" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="product.html" class="btn-cta">Заказать</a>
+                            <a href="product.html" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="catalog__product product-card">
+                    <div class="product-card__img">
+                        <img src="@img/catalog/product.png" alt="">
+                    </div>
+                    <div class="product-card__content">
+                        <h3 class="product-card__title">ЗУ КРУМБЕР</h3>
+                        <div class="product-card__btns">
+                            <a href="javascript:void(0)" class="btn-cta">Заказать</a>
+                            <a href="javascript:void(0)" class="btn-outline">Подробнее </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function moveCats() {
+        if (window.innerWidth < 768) {
+            let $cats = $(".catalog__cats");
+            if (!$(".catalog__cats").parent().hasClass("catalog")) {
+                $cats.insertBefore(".catalog__sidebar")
+            }
+        } else {
+            let $cats = $(".catalog__cats");
+            if ($(".catalog__cats").parent().hasClass("catalog")) {
+                $cats.insertBefore(".catalog__products")
+            }
+        }
+    }
+    $(window).resize(moveCats)
+
+    moveCats()
+</script>

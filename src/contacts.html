@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    @@include('html/head.html',{
+        "title": "Контакты"
+    })
+    <body>
+
+        <!-- Header -->
+        @@include('html/header.html')
+
+        <main>      
+            <!-- Breadcrumbs -->
+            @@include('html/contacts/breadcrumbs.html')
+
+            <!-- Contacts -->
+            @@include('html/contacts/contacts.html')
+
+            <section class="contacts section">
+                <!-- Map -->
+                @@include('html/index/contacts-map.html')
+            </section>
+
+            <!-- Form -->
+            @@include('html/index/form.html')
+        </main>
+
+
+        <!-- Footer -->
+        @@include('html/footer.html')
+
+        <script src="js/app.min.js"></script>
+    </body>
+</html>

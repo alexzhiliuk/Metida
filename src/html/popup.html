@@ -1,0 +1,41 @@
+<section class="popup" data-popup="1" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="@img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title">Оставьте заявку</h2>
+        <p class="popup__subtitle">
+            Заполните форму и мы свяжемся с вами в ближайшее время
+        </p>
+        <div class="popup__inputs">
+            <label for="" class="popup__label">Ваше имя</label>
+            <input class="popup__input" type="text" placeholder="Иван Иванов" required>
+            <label for="" class="popup__label">Номер телефона</label>
+            <input class="popup__input" type="tel" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
+            <label for="" class="popup__label">Email (необязательно)</label>
+            <input class="popup__input" type="email" placeholder="pochta@mail.ru">
+            <label for="" class="popup__label">Название вашей организации</label>
+            <input class="popup__input" type="text" placeholder="ООО «Метида-торг»">
+            <label for="" class="popup__label">Ваше сообщение</label>
+            <textarea class="popup__input" rows="3" placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
+            <label class="popup__confirm">
+                <input type="checkbox">
+                Я готов на обработку персональных данных
+            </label>
+        </div>
+        <button type="submit" class="btn-cta popup__btn">Отправить</button>
+    </form>
+</section>
+
+<section class="popup" data-popup="2" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__cover">
+            <img src="@img/popup/photo.jpg" alt="">
+        </div>
+        <h2 class="popup__title">Спасибо за обращение!</h2>
+        <p class="popup__subtitle">
+            Наши специалисты свяжутся с вами в ближайшее время
+        </p>
+        <button type="button" class="btn-cta popup__btn" data-popup-close>закрыть</button>
+    </form>
+</section>

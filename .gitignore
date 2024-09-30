@@ -1,0 +1,6 @@
+node_modules/
+gulp/version.json
+.DS_Store
+.vscode
+
+metida_new_v2_html/

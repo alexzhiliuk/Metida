@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicons -->
+     
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap&_v=20240930171805" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.min.css?_v=20240930171805">
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css?_v=20240930171805"
+    />
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js?_v=20240930171805"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js?_v=20240930171805"></script>
+
+    <script src="js/magnific.min.js?_v=20240930171805"></script>
+
+    <title>Контакты</title>
+</head>
+    <body>
+
+        <!-- Header -->
+        <!-- Header -->
+<section class="popup" data-popup="1" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__close">
+            <img src="img/popup/close.svg" alt="">
+        </div>
+        <h2 class="popup__title">Оставьте заявку</h2>
+        <p class="popup__subtitle">
+            Заполните форму и мы свяжемся с вами в ближайшее время
+        </p>
+        <div class="popup__inputs">
+            <label for="" class="popup__label">Ваше имя</label>
+            <input class="popup__input" type="text" placeholder="Иван Иванов" required>
+            <label for="" class="popup__label">Номер телефона</label>
+            <input class="popup__input" type="tel" placeholder="+375 (29) XXX–XX–XX" data-tel-by-input required>
+            <label for="" class="popup__label">Email (необязательно)</label>
+            <input class="popup__input" type="email" placeholder="pochta@mail.ru">
+            <label for="" class="popup__label">Название вашей организации</label>
+            <input class="popup__input" type="text" placeholder="ООО «Метида-торг»">
+            <label for="" class="popup__label">Ваше сообщение</label>
+            <textarea class="popup__input" rows="3" placeholder="Хочу закупить кукурузу. Свяжитесь со мной и сделайте коммерческое предложение…"></textarea>
+            <label class="popup__confirm">
+                <input type="checkbox">
+                Я готов на обработку персональных данных
+            </label>
+        </div>
+        <button type="submit" class="btn-cta popup__btn">Отправить</button>
+    </form>
+</section>
+
+<section class="popup" data-popup="2" style="display: none;">
+    <form class="popup__inner">
+        <div class="popup__cover">
+            <img src="img/popup/photo.jpg" alt="">
+        </div>
+        <h2 class="popup__title">Спасибо за обращение!</h2>
+        <p class="popup__subtitle">
+            Наши специалисты свяжутся с вами в ближайшее время
+        </p>
+        <button type="button" class="btn-cta popup__btn" data-popup-close>закрыть</button>
+    </form>
+</section>
+
+<header>
+    <section class="top-menu cont">
+      <a href="index.html">
+        <img src="img/logo.png">
+      </a>
+      <div class="top-menu-contacts">
+        <div>
+          <span class="icon">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.2496 12.5466H7.49976C7.15459 12.5466 6.87478 12.2685 6.87478 11.9254C6.87478 11.5824 7.15459 11.3043 7.49976 11.3043H12.2496C13.6281 11.3043 14.7495 10.1898 14.7495 8.81986V3.7267C14.7495 2.35677 13.6281 1.24223 12.2496 1.24223H3.74988C2.37143 1.24223 1.24996 2.35677 1.24996 3.7267V8.5093C1.24996 8.68055 1.39014 8.81986 1.56245 8.81986H3.43739C3.78257 8.81986 4.06237 9.09793 4.06237 9.44098C4.06237 9.78402 3.78257 10.0621 3.43739 10.0621H1.56245C0.700915 10.0621 0 9.36552 0 8.5093V3.7267C0 1.6718 1.6822 0 3.74988 0H12.2496C14.3173 0 15.9995 1.6718 15.9995 3.7267V8.81986C15.9995 10.8748 14.3173 12.5466 12.2496 12.5466ZM5.62482 11.9248C5.62482 11.5818 5.34502 11.3037 4.99984 11.3037H0.62498C0.279804 11.3037 0 11.5818 0 11.9248C0 12.2678 0.279804 12.5459 0.62498 12.5459H4.99984C5.34502 12.5459 5.62482 12.2678 5.62482 11.9248ZM7.49976 14.3789C7.49976 14.0358 7.21996 13.7577 6.87478 13.7577H0.62498C0.279804 13.7577 0 14.0358 0 14.3789C0 14.7219 0.279804 15 0.62498 15H6.87478C7.21996 15 7.49976 14.7219 7.49976 14.3789ZM10.2883 7.37396L13.3149 5.09098C13.5899 4.88359 13.6436 4.49397 13.4349 4.22074C13.2263 3.94754 12.8342 3.89409 12.5592 4.10152L9.53142 6.38536C8.6392 7.06157 7.3933 7.062 6.50086 6.38651L3.56948 4.13577C3.29633 3.92605 2.90378 3.97608 2.69279 4.24757C2.48177 4.51903 2.53211 4.9091 2.80529 5.11884L5.73816 7.37076L5.74126 7.37309C6.41089 7.8807 7.21337 8.13442 8.01575 8.13442C8.81772 8.13442 9.61957 7.88089 10.2883 7.37396Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="top-menu-contacts-email">metidatorg@gmail.com</span>
+        </div>
+        <div>
+          <span class="icon">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.87478 15.9995H3.1249C1.40183 15.9995 0 14.5977 0 12.8746V3.1249C0 1.40183 1.40183 0 3.1249 0H6.87478C8.59785 0 9.99969 1.40183 9.99969 3.1249V12.8746C9.99969 14.5977 8.59785 15.9995 6.87478 15.9995ZM3.1249 1.24996C2.09106 1.24996 1.24996 2.09106 1.24996 3.1249V12.8746C1.24996 13.9084 2.09106 14.7495 3.1249 14.7495H6.87478C7.90863 14.7495 8.74972 13.9084 8.74972 12.8746V3.1249C8.74972 2.09106 7.90863 1.24996 6.87478 1.24996H3.1249Z" fill="white"/>
+              <path d="M5.62494 13.5H4.37498C4.02981 13.5 3.75 13.2202 3.75 12.875C3.75 12.5298 4.02981 12.25 4.37498 12.25H5.62494C5.97012 12.25 6.24992 12.5298 6.24992 12.875C6.24992 13.2202 5.97012 13.5 5.62494 13.5Z" fill="white"/>
+              <path d="M5.62482 3.74988H4.37486C4.02969 3.74988 3.74988 3.47008 3.74988 3.1249C3.74988 2.77972 4.02969 2.49992 4.37486 2.49992H5.62482C5.97 2.49992 6.2498 2.77972 6.2498 3.1249C6.2498 3.47008 5.97 3.74988 5.62482 3.74988Z" fill="white"/>
+              </svg>
+          </span>
+          <span class="top-menu-contacts-phone">+375 (17) 502 - 34 - 47</span>
+        </div>
+      </div>
+      <button class="btn-cta btn-cta-with-glow" data-open-popup="1" type="button">Оставить заявку</button>
+      <button class="burger" type="button"></button>
+    </section>
+    <nav>
+      <a href="about.html">О нас</a>
+      <a href="catalog.html">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </header>
+
+  <div class="burger-menu">
+    <div class="btn-close-cont">
+      <button class="btn-close" type="button"></button>
+    </div>
+    <div class="nav-cont">
+      <a href="about.html">О нас</a>
+      <a href="catalog.html">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="news.html">Новости</a>
+      <a href="contacts.html">Контакты</a>
+    </div>
+    <hr>
+    <div class="burger-contacts-cont">
+      <button class="btn-cta btn-cta-with-glow" data-open-popup="1" type="button">Оставить заявку</button>
+      <div class="burger-top-menu-contacts top-menu-contacts">
+        <div class="burger-top-menu-contacts-1">
+          <span class="icon">
+            <svg width="16" height="15" viewBox="0 0 16 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.2496 12.5466H7.49976C7.15459 12.5466 6.87478 12.2685 6.87478 11.9254C6.87478 11.5824 7.15459 11.3043 7.49976 11.3043H12.2496C13.6281 11.3043 14.7495 10.1898 14.7495 8.81986V3.7267C14.7495 2.35677 13.6281 1.24223 12.2496 1.24223H3.74988C2.37143 1.24223 1.24996 2.35677 1.24996 3.7267V8.5093C1.24996 8.68055 1.39014 8.81986 1.56245 8.81986H3.43739C3.78257 8.81986 4.06237 9.09793 4.06237 9.44098C4.06237 9.78402 3.78257 10.0621 3.43739 10.0621H1.56245C0.700915 10.0621 0 9.36552 0 8.5093V3.7267C0 1.6718 1.6822 0 3.74988 0H12.2496C14.3173 0 15.9995 1.6718 15.9995 3.7267V8.81986C15.9995 10.8748 14.3173 12.5466 12.2496 12.5466ZM5.62482 11.9248C5.62482 11.5818 5.34502 11.3037 4.99984 11.3037H0.62498C0.279804 11.3037 0 11.5818 0 11.9248C0 12.2678 0.279804 12.5459 0.62498 12.5459H4.99984C5.34502 12.5459 5.62482 12.2678 5.62482 11.9248ZM7.49976 14.3789C7.49976 14.0358 7.21996 13.7577 6.87478 13.7577H0.62498C0.279804 13.7577 0 14.0358 0 14.3789C0 14.7219 0.279804 15 0.62498 15H6.87478C7.21996 15 7.49976 14.7219 7.49976 14.3789ZM10.2883 7.37396L13.3149 5.09098C13.5899 4.88359 13.6436 4.49397 13.4349 4.22074C13.2263 3.94754 12.8342 3.89409 12.5592 4.10152L9.53142 6.38536C8.6392 7.06157 7.3933 7.062 6.50086 6.38651L3.56948 4.13577C3.29633 3.92605 2.90378 3.97608 2.69279 4.24757C2.48177 4.51903 2.53211 4.9091 2.80529 5.11884L5.73816 7.37076L5.74126 7.37309C6.41089 7.8807 7.21337 8.13442 8.01575 8.13442C8.81772 8.13442 9.61957 7.88089 10.2883 7.37396Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="top-menu-contacts-email">metidatorg@gmail.com</span>
+        </div>
+        <div>
+          <span class="icon">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.87478 15.9995H3.1249C1.40183 15.9995 0 14.5977 0 12.8746V3.1249C0 1.40183 1.40183 0 3.1249 0H6.87478C8.59785 0 9.99969 1.40183 9.99969 3.1249V12.8746C9.99969 14.5977 8.59785 15.9995 6.87478 15.9995ZM3.1249 1.24996C2.09106 1.24996 1.24996 2.09106 1.24996 3.1249V12.8746C1.24996 13.9084 2.09106 14.7495 3.1249 14.7495H6.87478C7.90863 14.7495 8.74972 13.9084 8.74972 12.8746V3.1249C8.74972 2.09106 7.90863 1.24996 6.87478 1.24996H3.1249Z" fill="white"/>
+              <path d="M5.62494 13.5H4.37498C4.02981 13.5 3.75 13.2202 3.75 12.875C3.75 12.5298 4.02981 12.25 4.37498 12.25H5.62494C5.97012 12.25 6.24992 12.5298 6.24992 12.875C6.24992 13.2202 5.97012 13.5 5.62494 13.5Z" fill="white"/>
+              <path d="M5.62482 3.74988H4.37486C4.02969 3.74988 3.74988 3.47008 3.74988 3.1249C3.74988 2.77972 4.02969 2.49992 4.37486 2.49992H5.62482C5.97 2.49992 6.2498 2.77972 6.2498 3.1249C6.2498 3.47008 5.97 3.74988 5.62482 3.74988Z" fill="white"/>
+              </svg>
+          </span>
+          <span class="top-menu-contacts-phone">+375 (17) 502 - 34 - 47</span>
+        </div>
+      </div>
+    </div>
+</div>
+
+        <main>      
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs-wrapper container">
+
+    <section class="breadcrumbs">
+        
+        <a href="index.html" class="breadcrumbs__item">Главная</a>
+        <div class="breadcrumbs__arrow">
+            <img src="img/breadcrumbs/breadcrumbs-arrow.svg" alt="">
+        </div>
+        <a href="#" class="breadcrumbs__item">Контакты</a>
+
+    </section>
+
+</div>
+
+            <!-- Contacts -->
+            <section class="container section">
+    <h1>Наши контакты</h1>
+    <div class="our-contacts">
+        <div class="our-contacts__department">
+            <h2 class="our-contacts__title">Отдел продаж</h2>
+            <div class="our-contacts__items">
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">E-mail</div>
+                    <a href="mailto:metidatorg@gmail.com" class="our-contacts__value">metidatorg@gmail.com</a>
+                </div>
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">Телефон (факс)</div>
+                    <a href="tel:+375175023146" class="our-contacts__value">+375 (17) 502-31-46</a>
+                </div>
+            </div>
+        </div>
+        <div class="our-contacts__department">
+            <h2 class="our-contacts__title">Юридический отдел</h2>
+            <div class="our-contacts__items">
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">E-mail</div>
+                    <a href="mailto:metidatorg@gmail.com" class="our-contacts__value">metidatorg@gmail.com</a>
+                </div>
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">Телефон (факс)</div>
+                    <a href="tel:+375175023146" class="our-contacts__value">+375 (17) 502-31-46</a>
+                </div>
+            </div>
+        </div>
+        <div class="our-contacts__department">
+            <h2 class="our-contacts__title">Отдел закупок </h2>
+            <div class="our-contacts__items">
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">E-mail</div>
+                    <a href="mailto:metidatorg@gmail.com" class="our-contacts__value">metidatorg@gmail.com</a>
+                </div>
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">Телефон (факс)</div>
+                    <a href="tel:+375175023146" class="our-contacts__value">+375 (17) 502-31-46</a>
+                </div>
+            </div>
+        </div>
+        <div class="our-contacts__department">
+            <h2 class="our-contacts__title">Бухгалтерия</h2>
+            <div class="our-contacts__items">
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">E-mail</div>
+                    <a href="mailto:metidatorg@gmail.com" class="our-contacts__value">metidatorg@gmail.com</a>
+                </div>
+                <div class="our-contacts__item">
+                    <div class="our-contacts__type">Телефон (факс)</div>
+                    <a href="tel:+375175023146" class="our-contacts__value">+375 (17) 502-31-46</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+            <section class="contacts section">
+                <!-- Map -->
+                <div class="contacts-block-wrap cont">
+    <div class="contacts-block">
+      <div class="wave"></div>
+      <div class="contacts-block-cont">
+        <p>
+          <span class="icon">
+            <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.4235 1.964C10.1632 0.698315 8.48421 0.00125981 6.69577 0.00125981H6.68805C3.08666 -0.0724516 -0.0728694 3.09917 0.00127942 6.69925C0.0955513 9.24134 2.54109 12.4697 4.44552 14.95C5.00481 15.6181 5.81973 15.9995 6.69521 15.9995C7.60137 15.9995 8.44272 15.5912 9.00347 14.8792C10.4163 13.1236 13.4669 8.90093 13.3749 6.69918C13.3749 4.90946 12.6819 3.22781 11.4235 1.964ZM8.02164 14.1059C7.37579 14.9578 6.01721 14.9593 5.37112 14.1073C2.78878 10.8191 1.25109 8.08073 1.25109 6.69922C1.25109 3.69514 3.6901 1.25117 6.68805 1.25117H6.69577C9.68947 1.25117 12.125 3.69517 12.125 6.69922C12.125 8.09576 10.6294 10.7954 8.02164 14.1059ZM6.72317 9.34398C5.25866 9.34398 4.06719 8.15251 4.06719 6.688C4.21308 3.16447 9.2338 3.16551 9.37916 6.68803C9.37916 8.15254 8.18768 9.34398 6.72317 9.34398ZM6.72317 5.28189C5.94784 5.28189 5.31706 5.91267 5.31706 6.688C5.3943 8.55341 8.05232 8.55284 8.12928 6.688C8.12928 5.91267 7.49853 5.28189 6.72317 5.28189Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="contacts-block-title">Адрес:</span><br>
+          Минская обл., Минский р-н, Ждановичский с/с,<br>
+          р-н д. Таборы, адм-хоз здание, каб. 57
+        </p>
+        <p>
+          <span class="icon">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7.54006 10.2095L8.87477 8.87477V6.20536M16.7495 8.87477C16.7495 13.2239 13.2239 16.7495 8.87477 16.7495C4.52565 16.7495 1 13.2239 1 8.87477C1 4.52565 4.52565 1 8.87477 1C13.2239 1 16.7495 4.52565 16.7495 8.87477Z" stroke="white" stroke-width="1.33471" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="contacts-block-title">Режим работы:</span><br>
+          Пн-пт 9 — 18:00 сб-вс: вых.
+        </p>
+        <p>
+          <span class="icon">
+            <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6.87478 15.9995H3.1249C1.40183 15.9995 0 14.5977 0 12.8746V3.1249C0 1.40183 1.40183 0 3.1249 0H6.87478C8.59785 0 9.99969 1.40183 9.99969 3.1249V12.8746C9.99969 14.5977 8.59785 15.9995 6.87478 15.9995ZM3.1249 1.24996C2.09106 1.24996 1.24996 2.09106 1.24996 3.1249V12.8746C1.24996 13.9084 2.09106 14.7495 3.1249 14.7495H6.87478C7.90863 14.7495 8.74972 13.9084 8.74972 12.8746V3.1249C8.74972 2.09106 7.90863 1.24996 6.87478 1.24996H3.1249Z" fill="white"/>
+              <path d="M5.62494 13.5H4.37498C4.02981 13.5 3.75 13.2202 3.75 12.875C3.75 12.5298 4.02981 12.25 4.37498 12.25H5.62494C5.97012 12.25 6.24992 12.5298 6.24992 12.875C6.24992 13.2202 5.97012 13.5 5.62494 13.5Z" fill="white"/>
+              <path d="M5.62482 3.74988H4.37486C4.02969 3.74988 3.74988 3.47008 3.74988 3.1249C3.74988 2.77972 4.02969 2.49992 4.37486 2.49992H5.62482C5.97 2.49992 6.2498 2.77972 6.2498 3.1249C6.2498 3.47008 5.97 3.74988 5.62482 3.74988Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="contacts-block-title">Телефон:</span><br>
+          +375 (17) 502—34—47  
+        </p>
+        <p>
+          <span class="icon">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.2496 12.6246H7.49976C7.15459 12.6246 6.87478 12.3448 6.87478 11.9996C6.87478 11.6544 7.15459 11.3746 7.49976 11.3746H12.2496C13.6281 11.3746 14.7495 10.2532 14.7495 8.87472V3.74988C14.7495 2.37143 13.6281 1.24996 12.2496 1.24996H3.74988C2.37143 1.24996 1.24996 2.37143 1.24996 3.74988V8.56223C1.24996 8.73454 1.39014 8.87472 1.56245 8.87472H3.43739C3.78257 8.87472 4.06237 9.15452 4.06237 9.4997C4.06237 9.84488 3.78257 10.1247 3.43739 10.1247H1.56245C0.700915 10.1247 0 9.42377 0 8.56223V3.74988C0 1.6822 1.6822 0 3.74988 0H12.2496C14.3173 0 15.9995 1.6822 15.9995 3.74988V8.87472C15.9995 10.9424 14.3173 12.6246 12.2496 12.6246ZM5.62482 11.999C5.62482 11.6538 5.34502 11.374 4.99984 11.374H0.62498C0.279804 11.374 0 11.6538 0 11.999C0 12.3441 0.279804 12.6239 0.62498 12.6239H4.99984C5.34502 12.6239 5.62482 12.3441 5.62482 11.999ZM7.49976 14.4683C7.49976 14.1231 7.21996 13.8433 6.87478 13.8433H0.62498C0.279804 13.8433 0 14.1231 0 14.4683C0 14.8135 0.279804 15.0933 0.62498 15.0933H6.87478C7.21996 15.0933 7.49976 14.8135 7.49976 14.4683ZM10.2883 7.41983L13.3149 5.12265C13.5899 4.91397 13.6436 4.52192 13.4349 4.24699C13.2263 3.97209 12.8342 3.91831 12.5592 4.12703L9.53142 6.42508C8.6392 7.10549 7.3933 7.10593 6.50086 6.42623L3.56948 4.16149C3.29633 3.95047 2.90378 4.00081 2.69279 4.27399C2.48177 4.54714 2.53211 4.93963 2.80529 5.15068L5.73816 7.41661L5.74126 7.41895C6.41089 7.92972 7.21337 8.18502 8.01575 8.18502C8.81772 8.18502 9.61957 7.92991 10.2883 7.41983Z" fill="white"/>
+            </svg>
+          </span>
+          <span class="contacts-block-title">Почта:</span><br>
+          metidatorg@gmail.com
+        </p>
+      </div>
+    </div>
+</div>
+<div class="iframe" style="position:relative;overflow:hidden;"><a href="https://yandex.by/maps?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Яндекс Карты</a><a href="https://yandex.by/maps/?from=mapframe&ll=27.341213%2C53.903402&mode=usermaps&source=mapframe&um=constructor%3A1c6dc154f7523889b4e88e64ac64ad274601f13773bbbb4b7e9d0a9f7f302373&utm_medium=mapframe&utm_source=maps&z=17.48" style="color:#eee;font-size:12px;position:absolute;top:14px;">Яндекс Карты — транспорт, навигация, поиск мест</a><iframe src="https://yandex.by/map-widget/v1/?from=mapframe&ll=27.341213%2C53.903402&mode=usermaps&source=mapframe&um=constructor%3A1c6dc154f7523889b4e88e64ac64ad274601f13773bbbb4b7e9d0a9f7f302373&utm_source=mapframe&z=17.48" width="100%" height="654" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+<p class="cont iframe-text">Нажмите два раза по карте, чтобы навигировать по ней</p>
+            </section>
+
+            <!-- Form -->
+            
+<section class="form section">
+    <h2 class="cont">Мы заботимся о своих клиентах</h2>
+    <p class="cont section__subtitle">Мы предлагаем индивидуальные решения для каждого клиента, включая консультации<br> по выбору семян, готовых овощей и средств защиты, а также гибкие условия оплаты.</p>
+    <div class="form-dec-cont">
+      <p>Давайте двигаться к успеху вместе!</p>
+      <div class="form-flex-cont cont">
+        <b>Свяжитесь с нами</b>
+        <form method="POST" enctype="multipart/form-data" class="cont">
+          <label>
+            <p>Ваше имя</p>
+            <input name="name" required placeholder="Иван Иванов" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>Номер телефона</p>
+            <input name="phone" type="tel" required placeholder="+375 (29) XXX-XX-XX" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>Ваше сообщение</p>
+            <textarea name="msg" required placeholder="Введите текст..."></textarea>
+          </label>
+          <label>
+            <p>Название вашей компании</p>
+            <input name="company" required placeholder="ООО «Метида-торг»" maxlength="48" autocomplete="off">
+          </label>
+          <label>
+            <p>E-mail (необязательно)</p>
+            <input name="email" placeholder="pochta@mail.ru" maxlength="48" autocomplete="off">
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
+</section>
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="cont">
+    <div class="col-1">
+      <img src="img/logo.png">
+      <!-- TODO: php date here -->
+      <p>© Все права защищены. 2024</p>
+      <p><a href="javascript:void(0)">Политика конфиденциальности</a></p>
+    </div>
+    <div class="col-2 shifted-col">
+      <a href="javascript:void(0)">О нас</a>
+      <a href="javascript:void(0)">Продукция</a>
+      <a href="javascript:void(0)">Галерея</a>
+      <a href="javascript:void(0)">Новости</a>
+      <a href="javascript:void(0)">Контакты</a>
+    </div>
+    <div class="col-3 shifted-col">
+      <span>+375 (17) 502—34—47</span>
+      <span>metidatorg@gmail.com</span>
+    </div>
+</footer>
+
+        <script src="js/app.min.js?_v=20240930171805"></script>
+    </body>
+</html>

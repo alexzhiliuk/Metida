@@ -1,0 +1,61 @@
+.btn-outline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    padding: 12px 20px;
+    width: 100%;
+
+    font-size: 16px;
+    line-height: 18px;
+    color: #475569;
+
+    border-radius: 100px;
+
+    background: #FFF;
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: '';
+        border-radius: 100px;
+        background: linear-gradient(148.69deg, #E78E04 0%, #F6D096 54.99%, #E78E04 99.99%);
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: -1px;
+        right: -1px;
+        z-index: -2;
+    }
+
+    &::after {
+        content: '';
+        border-radius: 100px;
+        background: #FFF;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+    }
+
+
+}
+
+.btn-green {
+    @extend .btn-cta;
+
+    background: $colorGreen;
+    color: #3D3838;
+    box-shadow: none;
+    outline: 3px solid transparent;
+
+    &:hover {
+        &::before {
+            opacity: 0;
+        }
+        outline-color: $colorGreen;
+        background: none;
+    }
+}

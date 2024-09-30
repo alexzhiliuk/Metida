@@ -1,0 +1,40 @@
+.pagination {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(5px, 2vw, 15px);
+    margin-top: 40px;
+
+    // .pagination__arrow
+    &__arrow {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+    }
+
+    // .pagination__item
+    &__item {
+
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid #E8E8E8;
+
+        color: $colorTitle;
+        font-size: 14px;
+        line-height: 1;
+
+        // .pagination__item_active
+        &_active {
+            background: #E8E8E8;
+        }
+    }
+}

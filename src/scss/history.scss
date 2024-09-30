@@ -1,0 +1,114 @@
+.history {
+
+    background: url(../img/about/bg.png) center center / cover no-repeat;
+    padding: 60px 0 100px;
+    
+    * {
+        color: #FFF;
+    }
+
+    // .history__container
+    &__container {
+    }
+
+    // .history__items
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 123px;
+        row-gap: 94px;
+
+        padding-top: 52px;
+        padding-left: 84px;
+
+        position: relative;
+    }
+
+    // .history__line
+    &__line {
+        position: absolute;
+        left: 0;
+        width: 1211px;
+        top: 26px;
+
+        img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        @media screen and (max-width: $breakpoint1200) {
+            display: none;
+        }
+    }
+
+    // .history__item
+    &__item {
+        flex: 0 0 280px;
+        padding: 20px 20px 30px;
+        background: $colorGreen;
+        border-radius: 0 15px 15px 15px;
+        position: relative;
+
+        @media screen and (min-width: $breakpoint1200) {
+            height: 170px;
+        }
+        @media screen and (max-width: $breakpoint1200) {
+            flex: 0 0 calc(50% - 123px / 2);
+        }
+        @media screen and (max-width: $breakpoint768) {
+            flex: 0 0 100%;
+        }
+    }
+
+    // .history__year
+    &__year {
+        position: absolute;
+        top: 0;
+        left: -5px;
+        translate: -100% -100%;
+
+        background: url(../img/about/year-bg.png) center center / contain no-repeat;
+        padding: 12px;
+
+        font-weight: 700;
+        font-size: 27px;
+        line-height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #3D3838;
+
+    }
+
+    // .history__title
+    &__title {
+        
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 110%;
+
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+    }
+
+    // .history__text
+    &__text {
+
+        margin-top: 10px;
+        
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 110%;
+
+        color: #FFFFFF;
+
+    }
+}
+
